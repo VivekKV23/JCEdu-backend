@@ -47,9 +47,7 @@ const pd = path.dirname(__dirname1);
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(pd, "/frontend/build")));
 
-  app.get("*", (req, res) =>
-    res.sendFile("https://jce-virtual.netlify.app")
-  );
+  app.get("*", (req, res) => res.sendFile("https://jce-virtual.netlify.app"));
 } else {
   app.get("/", (req, res) => {
     res.send("API is running..");
